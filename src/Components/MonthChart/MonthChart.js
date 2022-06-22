@@ -1,13 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import Chart from "react-apexcharts";
-import Select from 'react-select'
-
-const options = [
-    { value: 'Twitter', label: 'Twitter' },
-    { value: 'Linkedin', label: 'Linkedin' },
-    { value: 'News', label: 'News' }
-  ]
 
 function MonthChart({chartData}) {
     let data = {
@@ -27,7 +20,7 @@ function MonthChart({chartData}) {
                 width: [4, 0, 0]
               },
               xaxis: {
-                categories: [1,2,3,4,5,6,7,8,9,10,11,12,"..", 31]
+                categories: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
               },
               markers: {
                 size: 13,
@@ -36,30 +29,52 @@ function MonthChart({chartData}) {
                   size: 15
                 }
               },
-              yaxis: {
-                tickAmount: 5,
-                min: 0,
-                max: 100
-              }
+              yaxis: 
+              [
+                {
+                  title: {
+                    text: "Sentiment"
+                  },
+                  min: 0,
+                  max: 2,
+                  tickAmount: 1,
+                  labels: {
+                        formatter: (value) => { 
+                            if (value == 0){
+                                return "negative"
+                            }
+                            if (value == 1){
+                                return "neutral"
+                            }
+                            if (value == 2){
+                                return "positive"
+                            }
+                            return "mixed"
+                        },
+                    },
+                },
+                {
+                  opposite: true,
+                  title: {
+                    text: "Post Count"
+                  },
+                  tickAmount: 5,
+                  min: 0,
+                  max: 100
+                }
+              ]
             },
         series: chartData.series,
         
       };
 
   return (
-        <Row>
-            <Col xs={10}>
-                <Chart
-                    options={data.options}
-                    series={data.series}
-                    type="bar"
-                    height="400"
-                    />
-            </Col>
-            <Col xs={2}>
-                <Select options={options} isMulti placeholder="Filter social media"/>
-            </Col>
-        </Row>
+    <Chart
+        options={data.options}
+        series={data.series}
+        type="bar"
+        height="400"
+        />
   );
 }
 

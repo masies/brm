@@ -1,0 +1,48 @@
+{
+    "posts" : [
+        {
+            "id" : 1,
+            "body" : "This is my first post",
+            "author" : "John Doe",
+            "sentiment" : "positive",
+            "n_likes" : 110,
+            "n_comments" : 10,
+            "n_shares" : 10,
+            "created_at" : "2020-01-01T00:00:00.000Z",
+            "social_media" : "twitter"
+        },
+        {
+            "id" : 2,
+            "body" : "This is my first post",
+            "author" : "John Doe",
+            "sentiment" : "negative",
+            "n_likes" : 110,
+            "n_comments" : 10,
+            "n_shares" : 10,
+            "created_at" : "2020-01-01T00:00:00.000Z",
+            "social_media" : "twitter"
+        },
+        {
+            "id" : 3,
+            "body" : "This is my first post",
+            "author" : "John Doe",
+            "sentiment" : "neutral",
+            "n_likes" : 110,
+            "n_comments" : 10,
+            "n_shares" : 10,
+            "created_at" : "2020-01-01T00:00:00.000Z",
+            "social_media" : "twitter"
+        },
+        {
+            "id" : 4,
+            "body" : "This is my first post",
+            "author" : "John Doe",
+            "sentiment" : "positive",
+            "n_likes" : 110,
+            "n_comments" : 10,
+            "n_shares" : 10,
+            "created_at" : "2020-01-01T00:00:00.000Z",
+            "social_media" : "twitter"
+        }
+    ]
+}

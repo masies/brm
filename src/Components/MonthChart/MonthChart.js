@@ -2,12 +2,14 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import Chart from "react-apexcharts";
 import Select from 'react-select'
+
 const options = [
     { value: 'Twitter', label: 'Twitter' },
     { value: 'Linkedin', label: 'Linkedin' },
     { value: 'News', label: 'News' }
   ]
-function MonthChart() {
+
+function MonthChart({chartData}) {
     let data = {
         options: {
             chart: {
@@ -40,18 +42,7 @@ function MonthChart() {
                 max: 100
               }
             },
-        series: [
-            {
-              name: "Count",
-              type: "line",
-              data: [30, 40, 25, 50, 49, 21, 70, 51, 30, 40, 25, 50, 49, 21]
-            },
-            {
-              name: "Sentiment",
-              type: "column",
-              data: [23, 12, 54, 61, 32, 56, 81, 19, 30, 40, 25, 50, 49, 21]
-            }
-          ],
+        series: chartData.series,
         
       };
 
@@ -66,7 +57,7 @@ function MonthChart() {
                     />
             </Col>
             <Col xs={2}>
-                <Select options={options} isMulti />
+                <Select options={options} isMulti placeholder="Filter social media"/>
             </Col>
         </Row>
   );

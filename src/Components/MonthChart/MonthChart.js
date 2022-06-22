@@ -36,8 +36,8 @@ function MonthChart({chartData}) {
                     text: "Sentiment"
                   },
                   min: 0,
-                  max: 2,
-                  tickAmount: 1,
+                  max: 3,
+                  tickAmount: 3,
                   labels: {
                         formatter: (value) => { 
                             if (value == 0){
@@ -49,7 +49,7 @@ function MonthChart({chartData}) {
                             if (value == 2){
                                 return "positive"
                             }
-                            return "mixed"
+                            return ""
                         },
                     },
                 },
@@ -58,9 +58,7 @@ function MonthChart({chartData}) {
                   title: {
                     text: "Post Count"
                   },
-                  tickAmount: 5,
-                  min: 0,
-                  max: 100
+                  tickAmount: 5
                 }
               ]
             },
